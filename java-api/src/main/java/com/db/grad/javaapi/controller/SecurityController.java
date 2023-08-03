@@ -1,16 +1,16 @@
 package com.db.grad.javaapi.controller;
 
-import com.db.grad.javaapi.exception.ResourceNotFoundException;
+// import com.db.grad.javaapi.exception.ResourceNotFoundException;
 import com.db.grad.javaapi.model.Security;
 import com.db.grad.javaapi.service.SecurityHandler;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+// import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
-import java.util.HashMap;
+// import javax.validation.Valid;
+// import java.util.Date;
+// import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+// import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -28,5 +28,11 @@ public class SecurityController {
     @GetMapping("/bonds")
     public List<Security> getAllSecurities() {
         return securityHandler.getAllSecurities();
+    }
+
+    // Display all the bonds whose maturity date is within the next/last 5 days
+    @GetMapping("/expiring/bonds")
+    public List<Security> getExpiringSecurities() {
+        return securityHandler.getExpiringSecurities();
     }
 }

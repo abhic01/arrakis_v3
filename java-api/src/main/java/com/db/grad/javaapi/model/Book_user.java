@@ -11,8 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table (name = "book_user")
-public class book_user 
-{
+public class Book_user {
     @Id
 
     //  creates variables

@@ -15,4 +15,8 @@ public interface SecurityRepository extends JpaRepository<Security, Long>
     // Makes a list of all the bonds in the system
     @Query(nativeQuery = true, value = "select * from security")
     List<Security> findAllSecurity();
+
+    //
+    @Query(nativeQuery = true, value = "select * from security where maturity_date between DATEADD('DAY', -5, CURRENT_DATE) and DATEADD('DAY', 5, CURRENT_DATE)")
+    List<Security> getExpiringSecurities();
 }
