@@ -1,5 +1,5 @@
 //  makes counter_party sql table columns into objects 
-//  counter_party_id and counter_party_name
+//  id and name
 
 package com.db.grad.javaapi.model;
 
@@ -15,24 +15,24 @@ public class Counter_Party
     @Id
 
     //  creates variables
-     private int counter_party_id;
-     private String counter_party_name;
+     private int id;
+     private String name;
 
-    //  primary key to counter_party_id object
+    //  primary key to id object
     @Id
-    @Column(name = "counter_party_id", nullable = false)
-     public int getid() {
-         return counter_party_id;
+    @Column(name = "id", nullable = false)
+     public int getId() {
+         return id;
      }
-     public void setid(int cp_id) {
-         this.counter_party_id = cp_id;
+     public void setId(int id) {
+         this.id = id;
      }
-    //  column counter_party_name to counter_party_name object
-     @Column(name = "counter_party_name", nullable = false)
-     public String getname() {
-         return counter_party_name;
+    //  column name to name object
+     @Column(name = "name", nullable = false)
+     public String getName() {
+         return name;
      }
-     public void setname(String cp_name) {
-         this.counter_party_name = cp_name;
+     public void setName(String name) {
+         this.name = name;
      }
 } 

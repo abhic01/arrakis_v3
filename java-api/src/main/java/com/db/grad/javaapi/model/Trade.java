@@ -1,3 +1,7 @@
+//  makes counter_party sql table columns into objects 
+//  quantity;currency, status, unit_price, trade_date, 
+//  settlement_date, buy_sell, id, book_id, security_id, counterparty_id
+
 package com.db.grad.javaapi.model;
 
 import java.time.LocalDateTime;
@@ -12,42 +16,24 @@ import javax.persistence.Table;
 public class Trade{
 
     @Id
-    /*create private propertie for trade type */
-    private String TradeType;
-    
-    /*create private propertie for trade currency*/
-    private Currency TradeCurrency;
 
-    /*create private propertie for id*/
-    private String Iden;
-
-    /*create private propertie for Quantity*/
+    // creates variables
     private int quantity;
-    
-    /*create private propertie for trade Status */
-    private String TradeStatus;
-    
-    /*create private propertie for trade date */
-    private LocalDateTime TradeDate;
+    private Currency currency;
+    private String status;
+    private double unit_price;
+    private LocalDateTime trade_date;
+    private String settlement_date;
+    private String buy_sell;
+    private int id;
+    private int book_id;
+    private int security_id;
+    private int counterparty_id;
 
-    /*create private propertie for price*/
-    private double UnitPrice;
 
-
-    /*constructor for Trade*/
-    public Trade(String tradeType, Currency tradeCurrency, int quantity, String tradeStatus, LocalDateTime tradeDate,
-            double unitPrice, String Iden) {
-        this.TradeType = tradeType;
-        this.TradeCurrency = tradeCurrency;
-        this.quantity = quantity;
-        this.TradeStatus = tradeStatus;
-        this.TradeDate = tradeDate;
-        this.UnitPrice = unitPrice;
-        this.Iden=Iden;
-    }
-
+    // creates objects for each of the table columns
     @Id
-    @Column(name = " quantity", nullable=false )
+    @Column(name = "quantity", nullable=false )
     public int getQuantity() {
         return quantity;
     }
@@ -55,63 +41,105 @@ public class Trade{
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
-       
+     
     
-    @Column(name= "trade_status", nullable=false )
-    public String getTradeStatus() {
-        return TradeStatus;
+    @Column(name="currency", nullable =false )
+    public Currency getCurrency() {
+        return currency;
     }
 
-    public void setTradeStatus(String tradeStatus) {
-        TradeStatus = tradeStatus;
+    public void setCurrency(Currency currency) {
+        this.currency = currency;
     }
 
 
-    @Column(name="trade_date", nullable=false )
-    public LocalDateTime getTradeDate() {
-        return TradeDate;
+    @Column(name= "status", nullable=false )
+    public String getStatus() {
+        return status;
     }
 
-    public void setTradeDate(LocalDateTime tradeDate) {
-        TradeDate = tradeDate;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
 
     @Column(name="unit_price", nullable=false )
     public double getUnitPrice() {
-        return UnitPrice;
+        return unit_price;
     }
 
     public void setUnitPrice(double unitPrice) {
-        UnitPrice = unitPrice;
+        this.unit_price = unitPrice;
     }
     
-    @Column(name="trade_type", nullable=false )
-    public String getTradeType() {
-        return TradeType;
+
+    @Column(name="trade_date", nullable=false )
+    public LocalDateTime getTradeDate() {
+        return trade_date;
     }
 
-    public void setTradeType(String tradeType) {
-        TradeType = tradeType;
+    public void setTradeDate(LocalDateTime tradeDate) {
+        this.trade_date = tradeDate;
     }
 
 
-    @Column(name="trade_currency", nullable =false )
-    public Currency getTradeCurrency() {
-        return TradeCurrency;
+    @Column(name="settlement_date", nullable=false )
+    public String getSettlementDate() {
+        return settlement_date;
     }
 
-    public void setTradeCurrency(Currency tradeCurrency) {
-        TradeCurrency = tradeCurrency;
+    public void setSettlementDate(String settlement_date) {
+        this.settlement_date = settlement_date;
     }
 
-    @Column(name = "trade_id", nullable=false )
-    public String getIden() {
-        return Iden;
+    
+    @Column(name="buy_sell", nullable=false )
+    public String getBuySell() {
+        return buy_sell;
     }
 
-    public void setIden(String iden) {
-        Iden = iden;
+    public void setBuySell(String buy_sell) {
+        this.buy_sell = buy_sell;
+    }
+    
+
+    @Column(name = "id", nullable=false )
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    @Column(name = "book_id", nullable=false )
+    public int getBookId() {
+        return book_id;
+    }
+
+    public void setBookId(int book_id) {
+        this.book_id = book_id;
+    }
+
+
+    @Column(name = "security_id", nullable=false )
+    public int getSecurityId() {
+        return security_id;
+    }
+
+    public void setSecurityId(int security_id) {
+        this.security_id = security_id;
+    }
+
+
+    @Column(name = "counterparty_id", nullable=false )
+    public int getCounterpartyId() {
+        return counterparty_id;
+    }
+
+    public void setCounterpartyId(int counterparty_id) {
+        this.counterparty_id = counterparty_id;
     }
     
     

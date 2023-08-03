@@ -1,5 +1,5 @@
 //  makes counter_party sql table columns into objects
-//  user_id, user_name, user_email, and user_email
+//  id, role, and email
 
 package com.db.grad.javaapi.model;
 
@@ -14,46 +14,39 @@ public class Users
 {
     @Id
     //  creates variables
-     private int user_id;
-     private String user_name;
-     private String user_email;
-     private String user_password;
+     private int id;
+     private String role;
+     private String email;
+
 
     @Id
 
-    //  primary key user_id to id object
-    @Column(name = "user_id", nullable = false)
-     public int getuser_id() {
-         return user_id;
+    //  primary key id to id object
+    @Column(name = "id", nullable = false)
+     public int getId() {
+         return id;
      }
-     public void setuser_id(int user_id) {
-         this.user_id = user_id;
-     }
-
-    //  column user_name to user_name object
-     @Column(name = "user_name", nullable = false)
-     public String getuser_name() {
-         return user_name;
-     }
-     public void setuser_name(String user_name) {
-         this.user_name = user_name;
+     public void setId(int id) {
+         this.id = id;
      }
 
-     //  column  user_email to  user_email object
-     @Column(name = " user_email", nullable = false)
-     public String getuser_email() {
-         return  user_email;
+
+     //  column  role to  role object
+     @Column(name = " role", nullable = false)
+     public String getRole() {
+         return  role;
      }
-     public void setuser_email(String  user_email) {
-         this. user_email =  user_email;
+     public void setRole(String  role) {
+         this. role =  role;
      }
 
-     //  column  user_password to  user_password object
-     @Column(name = " user_password", nullable = false)
-     public String getuser_password() {
-         return  user_password;
+
+     //  column  email to  email object
+     @Column(name = " email", nullable = false)
+     public String getEmail() {
+         return  email;
      }
-     public void setuser_password(String  user_password) {
-         this. user_password =  user_password;
+     public void setEmail(String  email) {
+         this. email =  email;
      }
     }
