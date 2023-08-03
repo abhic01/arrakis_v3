@@ -1,8 +1,10 @@
-import React from "react";
-import { Pets } from "./components/pets/Pets";
+import './App.css';
+import AllInfo from '../../react-app/src/components/bonds/AllInfo';
 
-const App = () => {
-  return <Pets />;
-};
+function App() {
+  return (
+    <AllInfo/>
+  );
+}
 
 export default App;
