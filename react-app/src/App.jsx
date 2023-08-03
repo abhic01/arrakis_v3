@@ -7,6 +7,9 @@ import Signup from "./components/Signup";
 import PhoneSignUp from "./components/PhoneSignUp";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { UserAuthContextProvider } from "./context/userAuthContext";
+import React from "react";
+import {Securities} from "./components/bonds/Security";
+
 
 function App() {
   return (
