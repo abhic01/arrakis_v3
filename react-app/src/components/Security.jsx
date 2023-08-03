@@ -3,12 +3,12 @@ import { findBonds } from "../../services/AllInfoServices";
 import styles from "./bonds.module.css";
 
 export const Security = () => {
-    const [securities, setSecurities] = useState([]);
+    const [bonds, setBonds] = useState([]);
 
     useEffect(() => {
-        findSecurities()
+        findBonds()
             .then(({data}) => {
-            setSecurities(data);
+            setBonds(data);
             });
     }, []);
   return (
