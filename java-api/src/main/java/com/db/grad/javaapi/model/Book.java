@@ -1,3 +1,6 @@
+//  makes book sql table columns into objects 
+//  id and name
+
 package com.db.grad.javaapi.model;
 
 import javax.persistence.Column;
@@ -11,27 +14,28 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "book")
 public class Book {
-    // Id of the book
+    // Id and name of the book variables
     @Id
-    private int bookId;
-    // Name of the book
-    private String bookName;
+    private int id;
+    private String name;
 
+    //  primary key id to id object
     @Id
-    @Column(name = "book_id", nullable = false)
-    public int getBookId() {
-        return bookId;
+    @Column(name = "id", nullable = false)
+    public int getId() {
+        return id;
     }
-    public void setBookId(int bookId) {
-        this.bookId = bookId;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    @Column(name = "book_name", nullable = false)
-    public String getBookName() {
-        return bookName;
+    //  column name to name object
+    @Column(name = "name", nullable = false)
+    public String getName() {
+        return name;
     }
-    public void setBookName(String bookName) {
-        this.bookName = bookName;
+    public void setName(String name) {
+        this.name = name;
     }
 
 

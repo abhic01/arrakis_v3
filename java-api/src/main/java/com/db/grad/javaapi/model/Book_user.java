@@ -1,4 +1,8 @@
+//  makes cook_user sql table columns into objects 
+//  book_id and user_id
+
 package com.db.grad.javaapi.model;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -6,29 +10,33 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table (name="Trade")
+@Table (name = "book_user")
+public class book_user 
+{
+    @Id
 
-public class Book_user {
-    private int User_id;
-    private int Book_id;
-    public Book_user(int book_user, int book_id) {
-        this.User_id = book_user;
-        this.Book_id = book_id;
-    }
+    //  creates variables
+    private int book_id;
+    private int user_id;
+
+    //  primary key book_id to book_id object
 
     @Id
-    @Column(name="", nullable=false)
+    @Column(name="book_id", nullable=false)
     public int getbook_id() {
-        return Book_id;
+        return book_id;
     }
-    public void setBook_id(int book_id) {
-        Book_id = book_id;
-    }
-    public int getuser_id() {
-        return User_id;
-    }
-    public void setUser_id(int user_id) {
-        User_id = user_id;
+    public void setbook_id(int book_id) {
+        this.book_id = book_id;
     }
     
+    //  primary key user_id to user_id object
+    @Column public int getuser_id() {
+        return user_id;
+    }
+    public void setuser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
+
 }
