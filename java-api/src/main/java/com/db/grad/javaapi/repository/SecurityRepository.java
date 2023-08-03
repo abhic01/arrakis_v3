@@ -6,11 +6,13 @@ import com.db.grad.javaapi.model.Security;
 import java.util.List;
 
 @Repository
-public interface BondsRepository extends JpaRepository<Security, Long>
+public interface SecurityRepository extends JpaRepository<Security, Long>
 {
     // Find a bond based on ISIN number, which is unique to a bond
     @Query(nativeQuery = true, value = "select * from security where isin = :isin")
     List<Security> findSecurityByIsin(String isin);
 
-    
+    // Makes a list of all the bonds in the system
+    @Query(nativeQuery = true, value = "select * from security")
+    List<Security> findAllSecurity();
 }
