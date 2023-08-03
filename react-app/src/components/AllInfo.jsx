@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { findBonds } from "../../services/AllInfoServices";
 import styles from "./bonds.module.css";
 
-
 export const AllInfo = () => {
     const [bonds, setBonds] = useState([]);
     
@@ -26,27 +25,17 @@ export const AllInfo = () => {
               <div>Face Value: {bond.face_value}</div>
               <div>Currency: {bond.currency}</div>
               <div>Status: {bond.status}</div>
+              <div>Book ID: {bond.book_id}</div>
+              <div>Security ID: {bond.security_id}</div>
+              <div>Counterparty ID: {bond.counterparty_id}</div>
+              <div>Quantity: {bond.quantity}</div>
+              <div>Unit Price: {bond.unit_price}</div>
+              <div>Buy / Sell: {bond.buy_sell}</div>
+              <div>Trade Date: {bond.trade_date}</div>
+              <div>Settlement Date: {bond.settlement_date}</div>
+
           </div>) 
           }
       </>
     )
-    
   };
-
-
-//import Security from './bonds/Security'
-//export default AllInfo
-
-/*
-`id` int NOT NULL AUTO_INCREMENT,
-`isin` varchar(50) DEFAULT NULL,
-`cusip` varchar(50) DEFAULT NULL,
-`issuer_name` varchar(255) NOT NULL,
-`maturity_date` datetime NOT NULL,
-`coupon` float NOT NULL,
-`type` varchar(255) NOT NULL,
-`face_value` float NOT NULL,
-`currency` varchar(10) NOT NULL,
-`status` varchar(32) DEFAULT NULL,
-PRIMARY KEY (`id`)
-*/
